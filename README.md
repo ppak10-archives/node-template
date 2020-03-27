@@ -1,5 +1,5 @@
-# react-app-template
-Minimum boilerplate template for front-end applications built with react
+# node-template
+Minimum boilerplate template for front-end applications built with node
 
 ## Getting Started
 1. Clone this repository and install the node dependecies with:
