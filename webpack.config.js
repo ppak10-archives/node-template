@@ -82,10 +82,12 @@ module.exports = (env) => {
     CONFIG.mode = 'production';
   }
 
-  if (env.local) {
-    CONFIG.output.path = path.resolve(__dirname, local.output.path);
-  } else if (env.express) {
-    CONFIG.output.path = path.resolve(__dirname, express.output.path);
+  if (env) {
+    if (env.local) {
+      CONFIG.output.path = path.resolve(__dirname, local.output.path);
+    } else if (env.express) {
+      CONFIG.output.path = path.resolve(__dirname, express.output.path);
+    }
   }
   return CONFIG;
 };

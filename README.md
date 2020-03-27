@@ -6,19 +6,14 @@ Minimum boilerplate template for front-end applications built with node
     ```
     npm install
     ```
-2. The default environment for the Express server is set to production which can be started with:
+2. The default server is set to Express and can be started with:
     ```
     npm start
     ```
-    * This will build the production version of the Webpack bundle along with express server.
+    * An unset `NODE_ENV` variable will default to the production version of the Webpack bundle along with express server.
 3. Open [`localhost:8080`](localhost:8080) to view the production instance of the server.
 
 ### Development Environments
-If you already have the `NODE_ENV` configured you can run the development version of the Express server and watch for changes with:
-```
-npm run dev
-```
-
 #### Mac OSX (Zsh)
 1. Set the `NODE_ENV` variable into your `.zshenv` file with the command:
     ```
