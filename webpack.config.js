@@ -4,15 +4,14 @@
  */
 
 // Node Modules
+const webpack = require('webpack');
 const path = require('path');
 
 // Constants
 const {build, express, local} = require('./app.json');
 
 const CONFIG = {
-  entry: {
-    index: ['./src/index.js'],
-  },
+  entry: build.entry,
   module: {
     rules: [
       {
@@ -58,7 +57,7 @@ const CONFIG = {
   output: {
     path: path.resolve(__dirname, build.output.path),
     filename: '[name].bundle.js',
-    publicPath: '/',
+    publicPath: build.output.publicPath,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -68,6 +67,17 @@ const CONFIG = {
 module.exports = (env) => {
   if (process.env.NODE_ENV && process.env.NODE_ENV.trim() === 'development') {
     CONFIG.mode = 'development';
+    if (env.express) {
+      // Sets Hot Loading config and plugins
+      CONFIG.entry.index = [
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        './src/hot',
+      ];
+      CONFIG.devtool = 'eval-source-map';
+      CONFIG.output.hotUpdateChunkFilename = '.hot/[id].[hash].hot-update.js';
+      CONFIG.output.hotUpdateMainFilename = '.hot/[hash].hot-update.json';
+      CONFIG.plugins = [new webpack.HotModuleReplacementPlugin()];
+    }
   } else {
     CONFIG.mode = 'production';
   }
@@ -76,12 +86,6 @@ module.exports = (env) => {
     CONFIG.output.path = path.resolve(__dirname, local.output.path);
   } else if (env.express) {
     CONFIG.output.path = path.resolve(__dirname, express.output.path);
-  } else {
-    CONFIG.devServer = {
-      contentBase: './',
-      historyApiFallback: true,
-      port: 3000,
-    };
   }
   return CONFIG;
 };

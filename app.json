@@ -6,19 +6,25 @@
     "port": 8080
   },
   "build": {
+    "entry": {
+      "index": [ "./src" ]
+    },
     "output": {
-      "path": "./dist"
+      "path": "./dist",
+      "publicPath": "/"
     }
   },
   "express": {
     "output": {
-      "path": "./public/js"
+      "path": "./public/js",
+      "publicPath": "/"
     },
     "static": "public"
   },
   "local": {
     "output": {
-      "path": "../backend-repository/static"
+      "path": "../backend-repository/static",
+      "publicPath": "/"
     }
   }
 }
