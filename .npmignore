@@ -1,0 +1,12 @@
+.circleci
+public
+src
+
+# Dot Files
+.babelrc
+.eslintrc
+.gitignore
+.lintstagedrc
+.prettierrc
+.stylelintrc
+webpack.config.js

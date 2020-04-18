@@ -26,5 +26,10 @@
       "path": "../backend-repository/static",
       "publicPath": "/"
     }
+  },
+  "npm": {
+    "output": {
+      "path": "./dist/js"
+    }
   }
 }

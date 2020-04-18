@@ -8,7 +8,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 // Constants
-const {build, express, local} = require('./app.json');
+const {build, express, local, npm} = require('./app.json');
 
 const CONFIG = {
   entry: build.entry,
@@ -87,6 +87,8 @@ module.exports = (env) => {
       CONFIG.output.path = path.resolve(__dirname, local.output.path);
     } else if (env.express) {
       CONFIG.output.path = path.resolve(__dirname, express.output.path);
+    } else if (env.npm) {
+      CONFIG.output.path = path.resolve(__dirname, npm.output.path);
     }
   }
   return CONFIG;
