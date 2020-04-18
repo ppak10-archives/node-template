@@ -1,5 +1,5 @@
 /**
- * index.js
+ * server.js
  * Entry file for express server
  */
 
@@ -12,7 +12,7 @@ import hot from 'webpack-hot-middleware';
 
 // Config
 import APP from 'app';
-import webpackConfig from './webpack.config';
+import webpackConfig from '../webpack.config';
 
 const compiler = webpack(webpackConfig({express: true}));
 

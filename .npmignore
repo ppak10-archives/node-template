@@ -2,11 +2,15 @@
 public
 src
 
-# Dot Files
+# Config Files
 .babelrc
 .eslintrc
 .gitignore
 .lintstagedrc
 .prettierrc
 .stylelintrc
+app.json
 webpack.config.js
+
+# Express Server
+index.js

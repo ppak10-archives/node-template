@@ -1,6 +1,6 @@
 /**
  * index.js
- * Entry file for repository
+ * Entry file for repository content
  */
 
 // Styles

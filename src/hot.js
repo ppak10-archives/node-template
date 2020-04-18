@@ -1,6 +1,6 @@
 /**
  * hot.js
- * Checks for reloads in entry file index.js
+ * Entry file for development environment and checks for reloads in index.js
  */
 
 import './index';

@@ -57,7 +57,7 @@ const CONFIG = {
   output: {
     path: path.resolve(__dirname, build.output.path),
     filename: '[name].bundle.js',
-    publicPath: build.output.publicPath,
+    publicPath: path.resolve(__dirname, build.output.publicPath),
   },
   resolve: {
     extensions: ['.js', '.jsx'],

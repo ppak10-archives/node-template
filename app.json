@@ -19,7 +19,7 @@
       "path": "./public/js",
       "publicPath": "/"
     },
-    "static": "public"
+    "static": "../public"
   },
   "local": {
     "output": {
@@ -28,6 +28,9 @@
     }
   },
   "npm": {
+    "entry": {
+      "index": ["./src/package"]
+    },
     "output": {
       "path": "./dist/js"
     }
