@@ -32,7 +32,9 @@
       "index": ["./src/package"]
     },
     "output": {
-      "path": "./dist/js"
+      "filename": "index.js",
+      "path": "./dist",
+      "publicPath": "/"
     }
   }
 }

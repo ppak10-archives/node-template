@@ -2,7 +2,7 @@
   "name": "replace-me-with-your-repository-name",
   "version": "1.0.0",
   "description": "replace-me-with-your-repository-description",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "build": "webpack",
     "build-express": "webpack --env.express",

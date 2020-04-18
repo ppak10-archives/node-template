@@ -56,7 +56,7 @@ const CONFIG = {
   },
   output: {
     path: path.resolve(__dirname, build.output.path),
-    filename: '[name].bundle.js',
+    filename: 'main.bundle.js',
     publicPath: path.resolve(__dirname, build.output.publicPath),
   },
   resolve: {
@@ -67,7 +67,7 @@ const CONFIG = {
 module.exports = (env) => {
   if (process.env.NODE_ENV && process.env.NODE_ENV.trim() === 'development') {
     CONFIG.mode = 'development';
-    if (env.express) {
+    if (env && env.express) {
       // Sets Hot Loading config and plugins
       CONFIG.entry.index = [
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
@@ -88,7 +88,8 @@ module.exports = (env) => {
     } else if (env.express) {
       CONFIG.output.path = path.resolve(__dirname, express.output.path);
     } else if (env.npm) {
-      CONFIG.output.path = path.resolve(__dirname, npm.output.path);
+      CONFIG.mode = 'production';
+      CONFIG.output.filename = npm.output.filename;
     }
   }
   return CONFIG;

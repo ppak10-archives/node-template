@@ -90,3 +90,43 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
 
 3. You may need to reload bundle updates with a hard refresh <kbd>command</kbd> / <kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>R</kbd> to load changes.
     * Webpack will continue to watch for changes, but you will typically need to hard refresh the browser to tell the server to send the updated bundle file.
+
+## Packaging
+1. Login to npm within your command line interface with the command:
+    ```
+    npm login
+    ```
+2. Make sure that you have updated the package `name` in the `package.json` file. This is how you will reference your package when installing through npm.
+    * Also update the package `description` while there too.
+        ```
+        {
+          "name": "replace-me-with-your-repository-name",
+          "description": "replace-me-with-your-repository-description",
+          ...
+        }
+        ```
+
+### Publishing
+Once you have logged in and updated the `package.json` values, you can publish your package with:
+
+```
+npm publish
+```
+
+### Updating
+Once you have published your package, you can update with the following commands:
+
+Note: Running these commands will also create a new commit
+
+* Patch Release (1.0.1 -> 1.0.2):
+  ```
+  npm version patch
+  ```
+* Minor Release (1.1.0 -> 1.2.0):
+  ```
+  npm version minor
+  ```
+* Major Release (1.0.0 -> 2.0.0):
+  ```
+  npm version major
+  ```
