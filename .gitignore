@@ -104,5 +104,6 @@ dist
 .tern-port
 
 # Custom
+*.DS_Store
 public/js/*
 dist/
