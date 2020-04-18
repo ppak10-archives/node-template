@@ -96,37 +96,43 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
     ```
     npm login
     ```
-2. Make sure that you have updated the package `name` in the `package.json` file. This is how you will reference your package when installing through npm.
-    * Also update the package `description` while there too.
-        ```
-        {
-          "name": "replace-me-with-your-repository-name",
-          "description": "replace-me-with-your-repository-description",
-          ...
-        }
-        ```
+2. Make sure that you have updated the package `name` and `version` values in the `package.json` file. This is how you will reference your package when installing through npm.
+    * Also update the package `description` to something relevant while there too.
+    ```
+    {
+      "name": "replace-me-with-your-repository-name",
+      "version": "1.0.0",
+      "description": "replace-me-with-your-repository-description",
+      ...
+    }
+    ```
 
-### Publishing
+### Initial Publishing
 Once you have logged in and updated the `package.json` values, you can publish your package with:
 
 ```
 npm publish
 ```
+  * This command will run `prepublishOnly` script and then publish to npm afterwards.
 
 ### Updating
-Once you have published your package, you can update with the following commands:
+1. Update the source files as you would and create and push out a commit for these changes.
+2. Once you have pushed those changes and you branch is up to date, you can update your package version with the following commands:
+    * Patch Release (1.0.1 -> 1.0.2):
+      ```
+      npm version patch
+      ```
+    * Minor Release (1.1.0 -> 1.2.0):
+      ```
+      npm version minor
+      ```
+    * Major Release (1.0.0 -> 2.0.0):
+      ```
+      npm version major
+      ```
+    Note: Running these commands will also create a new commit
 
-Note: Running these commands will also create a new commit
-
-* Patch Release (1.0.1 -> 1.0.2):
-  ```
-  npm version patch
-  ```
-* Minor Release (1.1.0 -> 1.2.0):
-  ```
-  npm version minor
-  ```
-* Major Release (1.0.0 -> 2.0.0):
-  ```
-  npm version major
-  ```
+3. After updating the package version, publish these updates with:
+      ```
+      npm publish
+      ```

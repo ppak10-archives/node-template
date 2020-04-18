@@ -12,8 +12,5 @@ src
 app.json
 webpack.config.js
 
-# Express Server
-index.js
-
 # Webpack Build Output
-dist/main.bundle.js
+main.bundle.js
