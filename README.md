@@ -6,15 +6,15 @@ Minimum boilerplate template for front-end applications built with node
     ```
     npm install
     ```
-2. The default server is set to Express and can be started with:
+2. The default server is set to [`Express`](https://expressjs.com/) and can be started with:
     ```
     npm start
     ```
     * An unset `NODE_ENV` variable will default to the production version of the Webpack bundle along with express server.
 3. Open [`localhost:8080`](localhost:8080) to view the production instance of the server.
 
-### Development Environments
-#### Mac OSX (Zsh)
+## Development Environments
+### Mac OSX (Zsh)
 1. Set the `NODE_ENV` variable into your `.zshenv` file with the command:
     ```
     echo 'export NODE_ENV=development' >> ~/.zshenv
@@ -28,15 +28,15 @@ Minimum boilerplate template for front-end applications built with node
     echo $NODE_ENV
     ```
 
-#### Windows 10
-##### Powershell
+### Windows 10
+#### Powershell
 Use Powershell set `NODE_ENV` variable to `development` with:
 ```
 $env:NODE_ENV="development"
 ```
   * **Note:** This value will not persist after you close the terminal.
 
-##### System Variables
+#### System Variables
 To persist the `NODE_ENV` after closing Powershell follow these steps:
 1. Type in `environment` into the search bar and open the dialog box for `System Properties` and under `Advanced` click on `Environment Variables`
 2. Under the `System variables`, click the `New...` button to create an environment variable with the values:
@@ -47,8 +47,9 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
     * If you work on a shared machine, you should probably add the variable to `User variables` instead of `System variables`.
 3. After entering these values make sure to exit by **clicking** `OK` otherwise the changes will not save.
 4. Restart Windows to use the updated environment variables.
-### Backends
-#### Express
+
+## Backends
+### Default (Express)
 1. The express backend is already configured to serve static files from `public/` but you can change the values of the webpack output path and express static folder in `app.json`.
     ```
     {
@@ -61,7 +62,7 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
     } 
     ```
 
-#### Seperate Local (i.e. Flask, Django, etc.)
+### Seperate Local (i.e. Flask, Django, etc.)
 1. The frontend and backend repositories should share the same parent directory
     * Set output directory for backend in `app.json` under `local.output.path`
       ```
