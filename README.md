@@ -96,13 +96,14 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
     ```
     npm login
     ```
-2. Make sure that you have updated the package `name` and `version` values in the `package.json` file. This is how you will reference your package when installing through npm.
-    * Also update the package `description` to something relevant while there too.
+2. Make sure that you have updated the package corresponding values in the `package.json` file.
+    * The `name` parameter is how npm will reference your package when installing.
     ```
     {
       "name": "replace-me-with-your-repository-name",
       "version": "1.0.0",
       "description": "replace-me-with-your-repository-description",
+      "author": "replace-me-with-your-name"
       ...
     }
     ```
