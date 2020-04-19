@@ -1,5 +1,7 @@
-![NodeJS](./public/images/svg/nodejs.svg)
-![Webpack](./public/images/svg/webpack.svg)
+<div>
+  <img src="./public/images/svg/nodejs.svg" height=100>
+  <img src="./public/images/svg/webpack.svg" height=100>
+</div>
 
 # node-template
 Minimum boilerplate template for front-end applications built with node
