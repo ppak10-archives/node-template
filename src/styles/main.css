@@ -1,5 +1,5 @@
 /**
- * main.less
+ * main.css
  * Main file app styles
  */
 
@@ -11,5 +11,5 @@ body {
   display: flex;
   flex: 1;
   height: 100%;
-  color: brown;
+  color: green;
 }

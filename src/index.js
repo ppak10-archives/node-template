@@ -4,4 +4,4 @@
  */
 
 // Styles
-import 'styles/main.less';
+import 'styles/main.css';
