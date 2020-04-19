@@ -1,3 +1,6 @@
+![NodeJS](./public/images/svg/nodejs.svg)
+![Webpack](./public/images/svg/webpack.svg)
+
 # node-template
 Minimum boilerplate template for front-end applications built with node
 
@@ -10,8 +13,10 @@ Minimum boilerplate template for front-end applications built with node
     ```
     npm start
     ```
-    * An unset `NODE_ENV` variable will default to the production version of the Webpack bundle along with express server.
+    **Note:** An unset `NODE_ENV` variable will default to `production` for both Webpack bundling and Express hosting.
 3. Open [`localhost:8080`](localhost:8080) to view the production instance of the server.
+
+    **Note:** Open [`localhost:3000`](localhost:3000) to if you have set `NODE_ENV` to `development`
 
 ## Development Environments
 ### Mac OSX (Zsh)
@@ -29,24 +34,26 @@ Minimum boilerplate template for front-end applications built with node
     ```
 
 ### Windows 10
-#### Powershell
-Use Powershell set `NODE_ENV` variable to `development` with:
-```
-$env:NODE_ENV="development"
-```
-  * **Note:** This value will not persist after you close the terminal.
+* #### Powershell
 
-#### System Variables
-To persist the `NODE_ENV` after closing Powershell follow these steps:
-1. Type in `environment` into the search bar and open the dialog box for `System Properties` and under `Advanced` click on `Environment Variables`
-2. Under the `System variables`, click the `New...` button to create an environment variable with the values:
-    ```
-    Variable name: NODE_ENV
-    Variable value: development
-    ```
-    * If you work on a shared machine, you should probably add the variable to `User variables` instead of `System variables`.
-3. After entering these values make sure to exit by **clicking** `OK` otherwise the changes will not save.
-4. Restart Windows to use the updated environment variables.
+  Use Powershell set `NODE_ENV` variable to `development` with:
+  ```
+  $env:NODE_ENV="development"
+  ```
+  **Note:** This value will not persist after you close the terminal.
+
+* #### System Variables
+  
+  To persist the `NODE_ENV` after closing Powershell follow these steps:
+  1. Type in `environment` into the search bar and open the dialog box for `System Properties` and under `Advanced` click on `Environment Variables`
+  2. Under the `System variables`, click the `New...` button to create an environment variable with the values:
+      ```
+      Variable name: NODE_ENV
+      Variable value: development
+      ```
+      **Note:** If you work on a shared machine, you should probably add the variable to `User variables` instead of `System variables`.
+  3. After entering these values make sure to exit by **clicking** `OK` otherwise the changes will not save.
+  4. Restart Windows to use the updated environment variables.
 
 ## Backends
 ### Default (Express)
@@ -98,7 +105,6 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
     npm login
     ```
 2. Make sure that you have updated the package corresponding values in the `package.json` file.
-    * The `name` parameter is how npm will reference your package when installing.
     ```
     {
       "name": "replace-me-with-your-repository-name",
@@ -108,6 +114,7 @@ To persist the `NODE_ENV` after closing Powershell follow these steps:
       ...
     }
     ```
+    **Note:** The `name` parameter is how npm will reference your package when installing.
 
 ### Initial Publishing
 Once you have logged in and updated the `package.json` values, you can publish your package with:
