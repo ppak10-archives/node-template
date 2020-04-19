@@ -4,7 +4,7 @@
     "npx eslint --fix",
     "git add ."
   ],
-  "*.less": [
+  "*.css": [
     "npx prettier --write",
     "npx stylelint --fix",
     "git add ."
