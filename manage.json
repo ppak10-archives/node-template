@@ -1,0 +1,11 @@
+{
+  "COMMANDS": {
+    "list-all": {
+      "description": "Lists all files within directory",
+      "platforms": {
+        "win32": "dir",
+        "linux": "ls -la"
+      }
+    }
+  }
+}
