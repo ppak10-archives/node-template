@@ -12,7 +12,15 @@ const {COMMANDS} = require('./manage.json');
 const ARGUMENT_START_INDEX = 2;
 
 class Manage {
-  runExec(cmd) {
+
+  constructor() {
+    this.arg = argv[ARGUMENT_START_INDEX];
+    this.branches = {
+      remote: [],
+    };
+  };
+
+  runExec(cmd, callback) {
     exec(cmd, (err, stdout, stderr) => {
       if (err) {
         console.error(`err: ${err.message}`);
@@ -23,21 +31,25 @@ class Manage {
         return;
       }
 
-      // eslint-disable-next-line no-console
-      console.log(stdout);
+      if (callback) {
+        callback(stdout);
+      } else {
+        // eslint-disable-next-line no-console
+        console.log(stdout);
+      }
+
     });
   }
 
   getCommand() {
-    const arg = argv[ARGUMENT_START_INDEX];
-    if (COMMANDS[arg]) {
-      if (COMMANDS[arg].platforms[platform]) {
-        return COMMANDS[arg].platforms[platform];
+    if (COMMANDS[this.arg]) {
+      if (COMMANDS[this.arg].platforms[platform]) {
+        return COMMANDS[this.arg].platforms[platform];
       } else {
         console.error(`err: Command not avaliable for '${platform}' platform`);
       }
     } else {
-      console.error(`err: '${arg}' is not a recognized argument`);
+      console.error(`err: '${this.arg}' is not a recognized argument`);
     }
   }
 
@@ -47,7 +59,18 @@ class Manage {
     } else {
       const cmd = this.getCommand();
       if (cmd) {
-        this.runExec(cmd);
+        switch (this.arg) {
+          case 'list-branches':
+            this.runExec(cmd, (stdout) => {
+              this.branches = {
+                remote: stdout.match(/\bremotes\/origin\/(?!HEAD)[^\n]+/g),
+              };
+            });
+            break;
+          default:
+            this.runExec(cmd);
+            break;
+        }
       }
     }
   }
