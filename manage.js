@@ -24,7 +24,7 @@ class Manage {
       }
 
       // eslint-disable-next-line no-console
-      console.log(`stdout: ${stdout}`);
+      console.log(stdout);
     });
   }
 
