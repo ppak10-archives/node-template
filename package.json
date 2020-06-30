@@ -11,7 +11,8 @@
     "build-npm": "webpack --env.npm",
     "dev": "npx babel-node ./src/server",
     "prepublishOnly": "npm run build-npm",
-    "start": "npm run build-express && npm run express"
+    "start": "npm run build-express && npm run express",
+    "test": "echo 'Hello World'"
   },
   "repository": {
     "type": "git",
