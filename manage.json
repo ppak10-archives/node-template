@@ -1,0 +1,25 @@
+{
+  "COMMANDS": {
+    "delete-remote-branch": {
+      "description": "Delete remote branch passed in as parameter",
+      "platforms": {
+        "win32": "git push origin --delete",
+        "linux": "git push origin --delete"
+      }
+    },
+    "list-files": {
+      "description": "Lists all files within directory",
+      "platforms": {
+        "win32": "dir",
+        "linux": "ls -la"
+      }
+    },
+    "list-branches": {
+      "description": "Lists all branches",
+      "platforms": {
+        "win32": "git branch -a",
+        "linux": "git branch -a"
+      }
+    }
+  }
+}
