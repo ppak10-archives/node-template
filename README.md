@@ -1,6 +1,6 @@
 <div>
-  <img src="./public/images/svg/nodejs.svg" height=100>
-  <img src="./public/images/svg/webpack.svg" height=100>
+  <img alt="NodeJS" src="./public/images/svg/nodejs.svg" height=100>
+  <img alt="Webpack" src="./public/images/svg/webpack.svg" height=100>
 </div>
 
 # node-template
@@ -11,66 +11,17 @@ Minimum boilerplate template for front-end applications built with node
     ```
     npm install
     ```
-2. The default server is set to [`Express`](https://expressjs.com/) and can be started with:
+2. Set up environment variables (accepts `.env` file)
     ```
-    npm start
+    NODE_ENV=development
+    PORT=3000 // Also defaults to port 3000 if unset
     ```
-    **Note:** An unset `NODE_ENV` variable will default to `production` for both Webpack bundling and Express hosting.
-3. Open [`localhost:8080`](localhost:8080) to view the production instance of the server.
-
-    **Note:** Open [`localhost:3000`](localhost:3000) to if you have set `NODE_ENV` to `development`
-
-## Development Environments
-### Mac OSX (Zsh)
-1. Set the `NODE_ENV` variable into your `.zshenv` file with the command:
+3. Run development server with:
     ```
-    echo 'export NODE_ENV=development' >> ~/.zshenv
+    npm run dev
     ```
-2. Then reload the changes to the file with:
-    ```
-    source ~/.zshenv
-    ```
-3. Test that the environment variable has been correctly set with:
-    ```
-    echo $NODE_ENV
-    ```
-
-### Windows 10
-* #### Powershell
-
-  Use Powershell set `NODE_ENV` variable to `development` with:
-  ```
-  $env:NODE_ENV="development"
-  ```
-  **Note:** This value will not persist after you close the terminal.
-
-* #### System Variables
-  
-  To persist the `NODE_ENV` after closing Powershell follow these steps:
-  1. Type in `environment` into the search bar and open the dialog box for `System Properties` and under `Advanced` click on `Environment Variables`
-  2. Under the `System variables`, click the `New...` button to create an environment variable with the values:
-      ```
-      Variable name: NODE_ENV
-      Variable value: development
-      ```
-      **Note:** If you work on a shared machine, you should probably add the variable to `User variables` instead of `System variables`.
-  3. After entering these values make sure to exit by **clicking** `OK` otherwise the changes will not save.
-  4. Restart Windows to use the updated environment variables.
 
 ## Backends
-### Default (Express)
-1. The express backend is already configured to serve static files from `public/` but you can change the values of the webpack output path and express static folder in `app.json`.
-    ```
-    {
-      "express": {
-        "output": {
-          "path": "./public/js"
-        },
-        "static": "public"
-      }
-    } 
-    ```
-
 ### Seperate Local (i.e. Flask, Django, etc.)
 1. The frontend and backend repositories should share the same parent directory
     * Set output directory for backend in `app.json` under `local.output.path`
@@ -102,23 +53,39 @@ Minimum boilerplate template for front-end applications built with node
     * Webpack will continue to watch for changes, but you will typically need to hard refresh the browser to tell the server to send the updated bundle file.
 
 ## Packaging
-1. Login to npm within your command line interface with the command:
-    ```
-    npm login
-    ```
-2. Make sure that you have updated the package corresponding values in the `package.json` file.
-    ```
-    {
-      "name": "replace-me-with-your-repository-name",
-      "version": "1.0.0",
-      "description": "replace-me-with-your-repository-description",
-      "author": "replace-me-with-your-name"
-      ...
-    }
-    ```
-    **Note:** The `name` parameter is how npm will reference your package when installing.
+### Setup
+Make sure that you have updated the package corresponding values in the `package.json` file.
+```
+{
+  "author": "<github_username>",
+  "bugs": {
+    "url": "https://github.com/<github_username>/<github_repository>/issues"
+  },
+  "description": "<repository_description>",
+  "homepage": "https://github.com/<github_username>/<github_repository>#readme",
+  "name": "<repository_name>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<github_username>/<github_repository>.git"
+  },
+  ...
+}
+```
 
-### Initial Publishing
+#### GitHub Package Registry
+1. Follow the instructions [here](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to create a personal access token for command line login
+   * Make sure to select the correct scopes such as `write:packages` and `read:packages` for the token
+    <img alt="Personal Access Token" src="./public/images/png/personal_access_token.png">
+
+2. Login to npm within your command line interface with the command:
+    ```
+    npm login --registry=https://npm.pkg.github.com/
+    ```
+
+    **Note:** The `name` parameter is how npm will reference your package when installing.
+    
+
+### Publishing
 Once you have logged in and updated the `package.json` values, you can publish your package with:
 
 ```
