@@ -1,17 +1,17 @@
 {
-  "name": "replace-me-with-your-repository-name",
-  "version": "1.0.3",
-  "description": "replace-me-with-your-repository-description",
+  "name": "REPLACE-ME-WITH-YOUR-REPOSITORY-NAME",
+  "version": "1.0.0",
+  "description": "REPLACE-ME-WITH-YOUR-REPOSITORY-DESCRIPTION",
   "main": "dist",
   "scripts": {
     "build": "webpack",
     "build-local": "webpack --env.local",
     "build-local-watch": "webpack --env.local --watch",
     "build-npm": "webpack --env.npm",
-    "dev": "npx babel-node ./src/server",
+    "dev": "npx babel-node ./server",
     "prepublishOnly": "npm run build-npm",
-    "start": "echo 'Enter your start command here'",
-    "test": "echo 'Hello World'"
+    "start": "echo 'ENTER YOUR START COMMAND HERE'",
+    "test": "echo 'HELLO WORLD'"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,6 @@
     "css-loader": "^3.6.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.3.1",
-    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
