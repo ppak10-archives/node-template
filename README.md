@@ -21,6 +21,18 @@ Minimum boilerplate template for front-end applications built with node
     npm run dev
     ```
 
+## Testing
+### GitHub Actions
+1. In the `package.json` file, enter your the name of your repository
+    ```
+    {
+      ...
+      "name": "<repository_name>",
+      ...
+    }
+    ```
+2. Enter the appropriate values to the configuration file under `.github/workflows/test.yml`
+
 ## Packaging
 ### Configuration
 * Make sure that you have updated the package corresponding values in the `package.json` file.
