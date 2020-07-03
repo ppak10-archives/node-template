@@ -1,28 +1,29 @@
 {
-  "name": "REPLACE-ME-WITH-YOUR-REPOSITORY-NAME",
+  "author": "<github_username>",
+  "bugs": {
+    "url": "https://github.com/<github_username>/<github_repository>/issues"
+  },
+  "description": "<repository_description>",
+  "homepage": "https://github.com/<github_username>/<github_repository>#readme",
+  "name": "<repository_name>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<github_username>/<github_repository>.git"
+  },
   "version": "1.0.0",
-  "description": "REPLACE-ME-WITH-YOUR-REPOSITORY-DESCRIPTION",
+  "license": "MIT",
   "main": "dist",
   "scripts": {
     "build": "webpack",
+    "build-dev": "webpack --env.dev --watch",
     "build-local": "webpack --env.local",
     "build-local-watch": "webpack --env.local --watch",
     "build-npm": "webpack --env.npm",
     "dev": "npx babel-node ./server",
     "prepublishOnly": "npm run build-npm",
-    "start": "echo 'ENTER YOUR START COMMAND HERE'",
-    "test": "echo 'HELLO WORLD'"
+    "start": "echo '<start_script>'",
+    "test": "echo '<test_script>'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ppak10/node-template.git"
-  },
-  "author": "replace-me-with-your-name",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ppak10/node-template/issues"
-  },
-  "homepage": "https://github.com/ppak10/node-template#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.3",
     "@babel/core": "^7.10.3",

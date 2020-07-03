@@ -2,9 +2,9 @@ name: Test
 
 on:
   push:
-    branches: [ development, master ]
+    branches: []
   pull_request:
-    branches: [ development, master ]
+    branches: []
 
 jobs:
   test:
@@ -20,4 +20,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm test
+    - run: |
+        npm install
+        npm test
