@@ -5,7 +5,7 @@
   },
   "description": "<repository_description>",
   "homepage": "https://github.com/<github_username>/<github_repository>#readme",
-  "name": "<repository_name>",
+  "name": "node-template",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/<github_username>/<github_repository>.git"
