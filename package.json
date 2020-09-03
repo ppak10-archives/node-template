@@ -1,17 +1,7 @@
 {
-  "author": "<github_username>",
-  "bugs": {
-    "url": "https://github.com/<github_username>/<github_repository>/issues"
-  },
-  "description": "<repository_description>",
-  "homepage": "https://github.com/<github_username>/<github_repository>#readme",
   "name": "node-template",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/<github_username>/<github_repository>.git"
-  },
   "version": "1.0.0",
-  "license": "MIT",
+  "description": "<repository_description>",
   "main": "dist",
   "scripts": {
     "build": "webpack",
@@ -24,6 +14,16 @@
     "start": "echo '<start_script>'",
     "test": "echo '<test_script>'"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<github_username>/<github_repository>.git"
+  },
+  "author": "<github_username>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<github_username>/<github_repository>/issues"
+  },
+  "homepage": "https://github.com/<github_username>/<github_repository>#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.3",
     "@babel/core": "^7.10.3",
@@ -32,7 +32,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "css-loader": "^3.6.0",
+    "css-loader": "^4.2.2",
     "dotenv": "^8.2.0",
     "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
